@@ -5266,7 +5266,7 @@ GameObject:
   - component: {fileID: 4261810379775164042}
   - component: {fileID: 4261810379775164041}
   m_Layer: 6
-  m_Name: LowPolyMan
+  m_Name: Hero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8793,7 +8793,7 @@ GameObject:
   - component: {fileID: 8360959774108466879}
   - component: {fileID: 8360959774108466878}
   m_Layer: 0
-  m_Name: Stalpi
+  m_Name: Pillars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
