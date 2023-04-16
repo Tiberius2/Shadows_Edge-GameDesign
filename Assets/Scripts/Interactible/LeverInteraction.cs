@@ -5,6 +5,9 @@ public class LeverInteraction : Interactible
     public Animator leverAnimator;
     public Animator doorAnimator;
 
+    private bool isActivated = false;
+    private bool isOpen = false;
+
     private void Awake()
     {
         leverAnimator = GetComponent<Animator>();
@@ -14,9 +17,12 @@ public class LeverInteraction : Interactible
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Interactiong");
-            leverAnimator.SetBool("isActivated", true);
-            doorAnimator.SetBool("isOpen", true);
+            Debug.Log("Interacting");
+            isActivated = !isActivated; // toggle the state of the lever
+            leverAnimator.SetBool("isActivated", isActivated);
+
+            isOpen = !isOpen; // toggle the state of the door
+            doorAnimator.SetBool("isOpen", isOpen);
         }
     }
 }
