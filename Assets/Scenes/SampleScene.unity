@@ -1072,9 +1072,8 @@ GameObject:
   - component: {fileID: 2337768378982051848}
   - component: {fileID: 4003229116391432689}
   - component: {fileID: 6863221905136116951}
-  - component: {fileID: 6863221905136116952}
   m_Layer: 0
-  m_Name: Lever
+  m_Name: LeverBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4463,8 +4462,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2610783902783861690}
   - component: {fileID: 3418388849591396609}
+  - component: {fileID: 3418388849591396612}
   m_Layer: 0
-  m_Name: lever
+  m_Name: Lever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4490,6 +4490,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3418388849591396612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3418388849591396608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23054b8f983a07a47ab7190f31996246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 2.5
+  leverAnimator: {fileID: 3418388849591396609}
+  doorAnimator: {fileID: 709651954}
 --- !u!4 &3465463788764537650
 Transform:
   m_ObjectHideFlags: 0
@@ -8766,19 +8781,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6863221905136116952
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434087550585588585}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.01653979, y: 0.033904597, z: 0.012000004}
-  m_Center: {x: 1.0965125e-10, y: -0.010952293, z: 0.0000000015749758}
 --- !u!1 &6909127510379047840
 GameObject:
   m_ObjectHideFlags: 0
