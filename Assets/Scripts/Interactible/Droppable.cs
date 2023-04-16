@@ -1,22 +1,26 @@
+using System.Collections;
 using UnityEngine;
 
 public class Droppable : Interactible
 {
     public Item Item;
 
+    public float cooldown = 0.75f;
+
     private int hp = 2;
 
-    public Droppable()
+    private bool canAttack = true;
+
+    private void Awake()
     {
         radius = 0.2f;
     }
 
     public override void Interact()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (canAttack && Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Debug.Log("Current hp: " + hp);
-            // TODO: add waiting time between attacks
+            canAttack = false;
 
             if (--hp <= 0)
             {
@@ -24,6 +28,8 @@ public class Droppable : Interactible
 
                 Destroy(gameObject);
             }
+
+            StartCoroutine(ResetCooldown());
         }
     }
 
@@ -36,5 +42,11 @@ public class Droppable : Interactible
 
         ItemPickup itemPickup = pickableItem.AddComponent<ItemPickup>();
         itemPickup.Item = Item;
+    }
+
+    private IEnumerator ResetCooldown()
+    {
+        yield return new WaitForSeconds(cooldown);
+        canAttack = true;
     }
 }

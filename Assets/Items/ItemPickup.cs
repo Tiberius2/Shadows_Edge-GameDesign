@@ -4,7 +4,7 @@ public class ItemPickup : Interactible
 {
     public Item Item;
 
-    public ItemPickup()
+    private void Awake()
     {
         radius = 0.1f;
     }
@@ -18,8 +18,6 @@ public class ItemPickup : Interactible
     {
         // Add picked item to inventory
         Inventory.Instance.Add(Item);
-
-        Debug.Log("Item " +  Item.name + " added to inventory"); // TODO: delete this
 
         Destroy(gameObject);
     }
