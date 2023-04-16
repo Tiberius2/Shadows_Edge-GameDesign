@@ -17,7 +17,6 @@ public class LeverInteraction : Interactible
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Interacting");
             isActivated = !isActivated; // toggle the state of the lever
             leverAnimator.SetBool("isActivated", isActivated);
 
