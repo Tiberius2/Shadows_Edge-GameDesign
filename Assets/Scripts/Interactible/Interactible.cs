@@ -25,11 +25,17 @@ public class Interactible : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        canInteract = true;
+        if (other.CompareTag("Player"))
+        {
+            canInteract = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        canInteract = false;
+        if (other.CompareTag("Player"))
+        {
+            canInteract = false;
+        }
     }
 }

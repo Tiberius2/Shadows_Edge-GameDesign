@@ -7,14 +7,11 @@ public class Droppable : Interactible
 
     public float cooldown = 0.75f;
 
+    public GameObject destroyedModel = null;
+
     private int hp = 2;
 
     private bool canAttack = true;
-
-    private void Awake()
-    {
-        radius = 0.2f;
-    }
 
     public override void Interact()
     {
@@ -26,7 +23,7 @@ public class Droppable : Interactible
             {
                 CreateItem();
 
-                Destroy(gameObject);
+                DestroyObject();
             }
 
             StartCoroutine(ResetCooldown());
@@ -42,6 +39,17 @@ public class Droppable : Interactible
 
         ItemPickup itemPickup = pickableItem.AddComponent<ItemPickup>();
         itemPickup.Item = Item;
+        itemPickup.radius = 0.8f;
+    }
+
+    private void DestroyObject()
+    {
+        if (destroyedModel != null)
+        {
+            Instantiate(destroyedModel, transform.position, transform.rotation);
+        }
+
+        Destroy(gameObject);
     }
 
     private IEnumerator ResetCooldown()
