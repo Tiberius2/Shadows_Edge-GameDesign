@@ -28,7 +28,7 @@ public class Droppable : Interactible
                 DestroyObject();
             }
 
-            StartCoroutine(ResetCooldown());
+            WaitForTimeThenExecute.ExecuteAfterDelay(cooldown, ResetCooldown);
         }
     }
 
@@ -57,9 +57,8 @@ public class Droppable : Interactible
         Destroy(gameObject);
     }
 
-    private IEnumerator ResetCooldown()
+    private void ResetCooldown()
     {
-        yield return new WaitForSeconds(cooldown);
         canAttack = true;
     }
 
