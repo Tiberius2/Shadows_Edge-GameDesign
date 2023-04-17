@@ -545,6 +545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1686424498}
   - component: {fileID: 1686424497}
+  - component: {fileID: 1686424499}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -580,6 +581,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1686424499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686424496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0cb5ba16016224d988652c4969bd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 2
 --- !u!1 &1758314111
 GameObject:
   m_ObjectHideFlags: 0
@@ -3776,7 +3790,7 @@ MonoBehaviour:
   radius: 1
   Item: {fileID: 11400000, guid: 3ebd32d92c35bfc4a886e22162a7194a, type: 2}
   cooldown: 0.75
-  destroyedModel: {fileID: 4707307867777388192, guid: b3ad1f4c0569b854f8e8c9dc6fdc3aff, type: 3}
+  destroyedModel: {fileID: 9180131911573829336, guid: d71bd7999dd3bc34b9634170482d9f75, type: 3}
 --- !u!136 &2732449259706952133
 CapsuleCollider:
   m_ObjectHideFlags: 0

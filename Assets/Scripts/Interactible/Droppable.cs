@@ -5,11 +5,13 @@ public class Droppable : Interactible
 {
     public Item Item;
 
+    public int hp = 2;
+
     public float cooldown = 0.75f;
 
     public GameObject destroyedModel = null;
 
-    private int hp = 2;
+    private GameObject destroyedModelInstance = null;
 
     private bool canAttack = true;
 
@@ -46,7 +48,10 @@ public class Droppable : Interactible
     {
         if (destroyedModel != null)
         {
-            Instantiate(destroyedModel, transform.position, transform.rotation);
+            // Create the cracked version of the current object and destroy it after some time
+            destroyedModelInstance = Instantiate(destroyedModel, transform.position, transform.rotation);
+
+            WaitForTimeThenExecute.ExecuteAfterDelay(3f, DestroyCrackedObject);
         }
 
         Destroy(gameObject);
@@ -56,5 +61,10 @@ public class Droppable : Interactible
     {
         yield return new WaitForSeconds(cooldown);
         canAttack = true;
+    }
+
+    private void DestroyCrackedObject()
+    {
+        Destroy(destroyedModelInstance);
     }
 }
