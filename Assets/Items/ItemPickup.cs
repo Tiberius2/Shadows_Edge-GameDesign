@@ -4,7 +4,7 @@ public class ItemPickup : Interactible
 
     private void Awake()
     {
-        radius = 0.1f;
+        radius = 0.4f;
     }
 
     public override void Interact()

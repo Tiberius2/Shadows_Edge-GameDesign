@@ -160,6 +160,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "UI",
+            "id": "cc063df9-2706-4e01-8460-6a6ce3b93126",
+            "actions": [
+                {
+                    "name": "Point",
+                    "type": "Button",
+                    "id": "69be715c-a6b2-4d5d-9731-6708c1ab3420",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cae4b0b1-37bb-4cd7-bc7b-bd6a73430038",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
