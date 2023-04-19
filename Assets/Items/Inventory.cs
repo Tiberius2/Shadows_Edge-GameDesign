@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEditor.Progress;
@@ -35,6 +37,8 @@ public class Inventory : MonoBehaviour
 
     public List<Item> items = new List<Item>();
 
+    public InventoryItemController[] InventoryItems;
+
     public bool Add(Item item)
     {
 
@@ -69,10 +73,17 @@ public class Inventory : MonoBehaviour
            GameObject obj = Instantiate(inventoryItem, itemContent);
            var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
            var itemIcon = obj.transform.Find("Image").GetComponent<Image>();
+            var removeButton = obj.transform.Find("RemoveButton").GetComponent<Button>();
 
            itemName.text = item.name;
            itemIcon.sprite = item.icon;
+
+            if (EnableRemove.isOn)
+            {
+                removeButton.gameObject.SetActive(true);
+            }
         }
+        SetInventoryItems();
     }
 
     public void EnebleItemsRemove()
@@ -90,6 +101,18 @@ public class Inventory : MonoBehaviour
             {
                 item.Find("RemoveButton").gameObject.SetActive(false);
             }
+        }
+
+        
+    }
+
+    public void SetInventoryItems()
+    {
+        InventoryItems = itemContent.GetComponentsInChildren<InventoryItemController>();
+        for (int i = 0; i < items.Count; i++)
+        {
+            InventoryItems[i].AddItem(items[i]);
+
         }
     }
 }

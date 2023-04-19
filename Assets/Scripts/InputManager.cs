@@ -21,6 +21,8 @@ public class InputManager : MonoBehaviour
     public bool shift_input;
     public bool jump_input;
 
+    //public bool attack_input;
+
 
     private void Awake()
     {

@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   name: Sword
+  value: 30
   icon: {fileID: 21300000, guid: 772932ac31cbbc049ad68b4a8c318ca3, type: 3}
-  model: {fileID: 5868863258200751877, guid: acba5565b37977e408c284355c13e084, type: 3}
+  model: {fileID: 233264880573933636, guid: ecf6b307b73080643ae284851c8897c9, type: 3}
+  itemType: 2

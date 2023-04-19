@@ -18,6 +18,7 @@ public class Droppable : Interactible
     {
         if (canAttack && Input.GetKeyDown(KeyCode.Mouse0))
         {
+            
             canAttack = false;
 
             if (--hp <= 0)

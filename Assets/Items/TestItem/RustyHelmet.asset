@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: RustyHelmet
   m_EditorClassIdentifier: 
   name: Rusty Helmet
+  value: 5
   icon: {fileID: 21300000, guid: f60bc79cfb039b341a4b74053b021314, type: 3}
   model: {fileID: 5868863258200751877, guid: acba5565b37977e408c284355c13e084, type: 3}
+  itemType: 1
