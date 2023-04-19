@@ -12,23 +12,20 @@ public class Droppable : Interactible
 
     private GameObject destroyedModelInstance = null;
 
-    private bool canAttack = true;
 
     public override void Interact()
     {
-        if (canAttack && Input.GetKeyDown(KeyCode.Mouse0))
+        if (InputManager.Instance.IsAttacking())
         {
-            
-            canAttack = false;
-
             if (--hp <= 0)
             {
-                CreateItem();
+                if (Item != null)
+                {
+                    CreateItem();
+                }
 
                 DestroyObject();
             }
-
-            WaitForTimeThenExecute.ExecuteAfterDelay(cooldown, ResetCooldown);
         }
     }
 
@@ -55,11 +52,6 @@ public class Droppable : Interactible
         }
 
         Destroy(gameObject);
-    }
-
-    private void ResetCooldown()
-    {
-        canAttack = true;
     }
 
     private void DestroyCrackedObject()
