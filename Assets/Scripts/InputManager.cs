@@ -83,6 +83,7 @@ public class InputManager : MonoBehaviour
             HandleSprintingInput();
             HandleJumpInput();
         }
+
         HandleAttack();
     }
 
@@ -121,6 +122,8 @@ public class InputManager : MonoBehaviour
 
     private void HandleAttack()
     {
+        if (jump_input)
+            return;
         if (Input.GetMouseButtonDown(0) && canAttack)
         {
             canAttack = false;

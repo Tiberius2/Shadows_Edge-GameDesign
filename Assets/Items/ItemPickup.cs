@@ -9,14 +9,16 @@ public class ItemPickup : Interactible
 
     public override void Interact()
     {
+        base.Interact();
         PickItem();
     }
 
     private void PickItem()
     {
         // Add picked item to inventory
-        Inventory.Instance.Add(Item);
+        bool wasPickedUp = Inventory.Instance.Add(Item);
 
-        Destroy(gameObject);
+        if(wasPickedUp)
+            Destroy(gameObject);
     }
 }
