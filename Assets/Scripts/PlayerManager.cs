@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -26,6 +25,8 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
         inputManager.HandleAllInputs();
     }
     private void FixedUpdate()

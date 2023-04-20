@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CameraManager : MonoBehaviour
 {
@@ -59,6 +60,8 @@ public class CameraManager : MonoBehaviour
 
     private void RotateCamera()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;  
         Vector3 rotation;
         Quaternion targetRotation;
         lookAngle = lookAngle + (inputManager.cameraInputX * cameraLookSpeed);

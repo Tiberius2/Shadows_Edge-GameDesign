@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Droppable : Interactible
 {
-    public Item Item;
+    public Item item;
 
     public int hp = 2;
 
@@ -19,7 +19,7 @@ public class Droppable : Interactible
         {
             if (--hp <= 0)
             {
-                if (Item != null)
+                if (item != null)
                 {
                     CreateItem();
                 }
@@ -32,12 +32,12 @@ public class Droppable : Interactible
     private void CreateItem()
     {
         // Create the object that can be picked after the current droppable object is destroyed
-        GameObject pickableItem = Instantiate(Item.model);
-        pickableItem.name = Item.name;
+        GameObject pickableItem = Instantiate(item.model);
+        pickableItem.name = item.name;
         pickableItem.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
 
         ItemPickup itemPickup = pickableItem.AddComponent<ItemPickup>();
-        itemPickup.Item = Item;
+        itemPickup.item = item;
         itemPickup.radius = 0.8f;
     }
 
