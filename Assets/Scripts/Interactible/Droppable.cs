@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Droppable : Interactible
@@ -23,7 +24,6 @@ public class Droppable : Interactible
                 {
                     CreateItem();
                 }
-
                 DestroyObject();
             }
         }
