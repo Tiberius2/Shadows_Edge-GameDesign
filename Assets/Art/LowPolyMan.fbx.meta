@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: 423791673a6d34c41a0df7d0287fb9fe
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -8808938681687948163
+    second: QuickRigCharacter_Reference|QuickRigCharacter_Reference|Take 001|BaseLayer
   externalObjects: {}
   materials:
     materialImportMode: 2
