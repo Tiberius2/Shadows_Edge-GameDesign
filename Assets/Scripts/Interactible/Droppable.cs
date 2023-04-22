@@ -20,13 +20,19 @@ public class Droppable : Interactible
         {
             if (--hp <= 0)
             {
-                if (item != null)
-                {
-                    CreateItem();
-                }
-                DestroyObject();
+                WaitForTimeThenExecute.ExecuteAfterDelay(0.5f, HandleDestruction);
             }
         }
+    }
+
+    private void HandleDestruction()
+    {
+        if (item != null)
+        {
+            CreateItem();
+        }
+
+        DestroyObject();
     }
 
     private void CreateItem()

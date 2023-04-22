@@ -22,5 +22,6 @@ public class WaitForTimeThenExecute : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         action?.Invoke();
+        Destroy(gameObject);
     }
 }

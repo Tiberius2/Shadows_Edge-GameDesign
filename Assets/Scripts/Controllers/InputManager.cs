@@ -125,7 +125,7 @@ public class InputManager : MonoBehaviour
     {
         if (jump_input)
             return;
-        if (Input.GetMouseButtonDown(0) && canAttack)
+        if ((Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)) && canAttack)
         {
             canAttack = false;
             WaitForTimeThenExecute.ExecuteAfterDelay(cooldown, ResetCooldown);
@@ -144,7 +144,7 @@ public class InputManager : MonoBehaviour
 
     public bool IsAttacking()
     {
-        if (Input.GetMouseButtonDown(0) && canAttack)
+        if ((Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)) && canAttack)
         {
             return true;
         }
