@@ -27,19 +27,21 @@ public class Inventory : MonoBehaviour
 
     private readonly int space = 20; 
 
-    private readonly Dictionary<Item, int> items = new();
+    private readonly List<Item> items = new();
 
 
-    public bool Add(Item item, int count = 1)
+    public bool Add(Item item)
     {
         if (!item.defaultItem)
         {
-            bool itemExistsInInventory = items.ContainsKey(item);
+            bool itemExistsInInventory = items.Contains(item);
+            Debug.Log("Item exists: " + itemExistsInInventory);
 
             if (item.canBeStacked && itemExistsInInventory)
             {
                 // Update item count
-                items[item] += count;
+                Item itemInInventory = items.Find(i => i.Equals(item));
+                itemInInventory.count++;
 
                 InventoryItemsChanged();
 
@@ -55,7 +57,7 @@ public class Inventory : MonoBehaviour
                 return false;
             }
 
-            items.Add(item, count);
+            items.Add(item);
 
             InventoryItemsChanged();
 
@@ -65,15 +67,16 @@ public class Inventory : MonoBehaviour
         return true;
     }
 
-    public void Remove(Item item, int count = 1)
+    public void Remove(Item item)
     {
-        bool itemExistsInInventory = items.ContainsKey(item);
+        bool itemExistsInInventory = items.Contains(item);
 
         if (itemExistsInInventory)
         {
-            items[item] -= count;
+            Item itemInInventory = items.Find(i => i.Equals(item));
+            itemInInventory.count--;
 
-            if (items[item] <= 0)
+            if (itemInInventory.count <= 0)
             {
                 items.Remove(item);
 
@@ -82,13 +85,9 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    //public Item Get(int index)
-    //{
-    //    return items[index];
-    //}
-    public Dictionary<Item, int> GetItems()
+    public Item Get(int index)
     {
-        return items;
+        return items[index];
     }
 
     public int GetCount() 

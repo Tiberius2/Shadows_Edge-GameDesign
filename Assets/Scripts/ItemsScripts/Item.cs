@@ -12,6 +12,8 @@ public class Item : ScriptableObject
     public bool defaultItem = false;
 
     public bool canBeStacked = false;
+
+    public int count = 1;
     
 
     public virtual void Use()

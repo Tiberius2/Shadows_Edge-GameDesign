@@ -24,7 +24,8 @@ public class InventoryUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Inventory")){
+        if (Input.GetButtonDown("Inventory"))
+        {
             inventoryUI.SetActive(!inventoryUI.activeSelf);
             cursorLocked = !cursorLocked;
             if (cursorLocked)
@@ -42,12 +43,13 @@ public class InventoryUI : MonoBehaviour
 
     void UpdateUI()
     {
-        for(int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < slots.Length; i++)
         {
-            if(i < inventory.GetCount())
+            if (i < inventory.GetCount())
             {
                 slots[i].AddItem(inventory.Get(i));
-            } else
+            }
+            else
             {
                 slots[i].ClearSlot();
             }
