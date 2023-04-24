@@ -8,7 +8,7 @@ public class InventoryUI : MonoBehaviour
 
     private bool cursorLocked = true;
 
-    Inventory inventory;
+    private Inventory inventory;
 
     InventorySlot[] slots;
 
@@ -44,9 +44,9 @@ public class InventoryUI : MonoBehaviour
     {
         for(int i = 0; i < slots.Length; i++)
         {
-            if(i < inventory.items.Count)
+            if(i < inventory.GetCount())
             {
-                slots[i].AddItem(inventory.items[i]);
+                slots[i].AddItem(inventory.Get(i));
             } else
             {
                 slots[i].ClearSlot();

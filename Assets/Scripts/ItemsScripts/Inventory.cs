@@ -1,10 +1,5 @@
 using System.Collections.Generic;
-using System.Linq;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class Inventory : MonoBehaviour
 {
@@ -27,30 +22,66 @@ public class Inventory : MonoBehaviour
     #endregion
 
     public delegate void OnItemChanged();
+
     public OnItemChanged OnItemChangedCallback;
 
-    public int space = 20; 
+    private readonly int space = 20; 
 
-    public List<Item> items = new List<Item>();
+    private readonly List<Item> items = new();
+
     public bool Add(Item item)
     {
-        if (!item.defaultItem) {
-            if (items.Count >= space)
+        if (!item.defaultItem)
+        {
+            bool itemExistsInInventory = items.Contains(item);
+
+            if (item.canBeStacked && itemExistsInInventory)
+            {
+                // Update item count
+
+                InventoryItemsChanged();
+
+                return true;
+            }
+
+            bool noSpaceInInventory = items.Count >= space;
+
+            if (noSpaceInInventory)
             {
                 Debug.Log("Not enough room");
+
                 return false;
             }
+
             items.Add(item);
-            if (OnItemChangedCallback != null)
-                OnItemChangedCallback.Invoke();
-        }       
+
+            InventoryItemsChanged();
+
+            return true;
+        }
+
         return true;
     }
 
     public void Remove(Item item)
     {
         items.Remove(item);
-        if (OnItemChangedCallback != null)
-            OnItemChangedCallback.Invoke();
+
+        InventoryItemsChanged();
+    }
+
+    public Item Get(int index)
+    {
+        return items[index];
+    }
+
+    public int GetCount() 
+    { 
+        return items.Count; 
+    }
+
+    private void InventoryItemsChanged()
+    {
+        OnItemChangedCallback?.Invoke();
     }
 }
