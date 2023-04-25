@@ -16,6 +16,7 @@ public class ItemPickup : Interactible
     {
         // Add item to inventory if there is space
         bool wasPickedUp = Inventory.Instance.Add(item);
+
         if (wasPickedUp)
         {
             Destroy(gameObject);

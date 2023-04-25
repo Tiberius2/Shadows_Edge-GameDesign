@@ -20,9 +20,9 @@ public class InventorySlot : MonoBehaviour
 
         removeButton.interactable = true;
 
-        if (item.count > 1)
+        if (item.GetAmount() > 1)
         {
-            count.GetComponentInChildren<Text>().text = item.count.ToString();
+            count.GetComponentInChildren<Text>().text = item.GetAmount().ToString();
             count.SetActive(true);
         }
     }
@@ -30,9 +30,14 @@ public class InventorySlot : MonoBehaviour
     public void ClearSlot()
     {
         item = null;
+
         icon.sprite = null;
         icon.enabled = false;
+
         removeButton.interactable = false;
+
+        count.GetComponentInChildren<Text>().text = string.Empty;
+        count.SetActive(false);
     }
 
     public void OnRemoveButton()

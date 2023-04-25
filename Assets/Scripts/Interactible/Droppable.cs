@@ -44,7 +44,7 @@ public class Droppable : Interactible
 
         ItemPickup itemPickup = pickableItem.AddComponent<ItemPickup>();
         itemPickup.item = item;
-        itemPickup.radius = 0.8f;
+        itemPickup.radius = item.pickupRadius;
     }
 
     private void DestroyObject()

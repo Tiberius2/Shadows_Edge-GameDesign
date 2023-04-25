@@ -35,16 +35,14 @@ public class Inventory : MonoBehaviour
         if (!item.defaultItem)
         {
             bool itemExistsInInventory = items.Contains(item);
-            Debug.Log("Item exists: " + itemExistsInInventory);
 
             if (item.canBeStacked && itemExistsInInventory)
             {
                 // Update item count
                 Item itemInInventory = items.Find(i => i.Equals(item));
-                itemInInventory.count++;
+                itemInInventory.AddAmount();
 
                 InventoryItemsChanged();
-
                 return true;
             }
 
@@ -74,9 +72,9 @@ public class Inventory : MonoBehaviour
         if (itemExistsInInventory)
         {
             Item itemInInventory = items.Find(i => i.Equals(item));
-            itemInInventory.count--;
+            itemInInventory.SubstractAmount();
 
-            if (itemInInventory.count <= 0)
+            if (itemInInventory.GetAmount() <= 0)
             {
                 items.Remove(item);
 

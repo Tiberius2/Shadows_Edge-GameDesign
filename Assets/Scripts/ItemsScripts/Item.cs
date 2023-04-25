@@ -13,8 +13,15 @@ public class Item : ScriptableObject
 
     public bool canBeStacked = false;
 
-    public int count = 1;
-    
+    public float pickupRadius = 0.8f;
+
+    private int amount;
+
+
+    private void Awake()
+    {
+        amount = 1;
+    }
 
     public virtual void Use()
     {
@@ -24,5 +31,20 @@ public class Item : ScriptableObject
     public void RemoveFromInventory()
     {
         Inventory.Instance.Remove(this);
+    }
+
+    public int GetAmount()
+    {
+        return amount;
+    }
+
+    public void AddAmount(int amount = 1)
+    {
+        this.amount += amount;
+    }
+
+    public void SubstractAmount(int amount = 1)
+    {
+        this.amount -= amount;
     }
 }
