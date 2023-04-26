@@ -46,6 +46,11 @@ public class CameraManager : MonoBehaviour
 
     public void HandleAllCameraMovement()
     {
+        if (GameState.Instance.IsPaused)
+        {
+            return;
+        }
+
         FollowTarget();
         RotateCamera();
         HandleCameraCollisions();

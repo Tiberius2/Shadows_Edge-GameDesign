@@ -77,6 +77,11 @@ public class InputManager : MonoBehaviour
 
     public void HandleAllInputs()
     {
+        if (GameState.Instance.IsPaused)
+        {
+            return;
+        }
+
         if (!attack_input)
         {
             HandleMovementInput();

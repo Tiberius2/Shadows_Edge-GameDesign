@@ -28,6 +28,16 @@ public class InventoryUI : MonoBehaviour
         {
             inventoryUI.SetActive(!inventoryUI.activeSelf);
             cursorLocked = !cursorLocked;
+
+            if (GameState.Instance.IsPaused)
+            {
+                GameState.Instance.Resume();
+            }
+            else
+            {
+                GameState.Instance.Pause();
+            }
+
             if (cursorLocked)
             {
                 Cursor.lockState = CursorLockMode.Locked;
