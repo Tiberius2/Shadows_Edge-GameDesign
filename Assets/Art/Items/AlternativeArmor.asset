@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95cf824db4045aa49a60e36d7220b99a, type: 3}
+  m_Name: AlternativeArmor
+  m_EditorClassIdentifier: 
+  name: RedArmor
+  icon: {fileID: 21300000, guid: 3924ac3c5c6e4a741ba91774393e79e1, type: 3}
+  model: {fileID: 5868863258200751877, guid: acba5565b37977e408c284355c13e084, type: 3}
+  defaultItem: 0
+  canBeStacked: 0
+  pickupRadius: 0.8
+  equipSlot: 1
+  mesh: {fileID: 536091408129240722, guid: 4670731109170894c9e18e0aae0401ee, type: 3}
+  armorModifier: 8
+  damageModifier: 0
