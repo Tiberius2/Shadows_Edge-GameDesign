@@ -78,8 +78,9 @@ public class Inventory : MonoBehaviour
             {
                 items.Remove(item);
 
-                InventoryItemsChanged();
             }
+
+            InventoryItemsChanged();
         }
     }
 
