@@ -16,7 +16,7 @@ public class Droppable : Interactible
 
     public override void Interact()
     {
-        if (InputManager.Instance.IsAttacking())
+        if (InputManager.Instance.IsAttacking() && !GameState.Instance.IsPaused)
         {
             if (--hp <= 0)
             {
