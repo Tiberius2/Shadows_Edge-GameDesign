@@ -132,7 +132,6 @@ public class InputManager : MonoBehaviour
             return;
         if ((Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)) && canAttack)
         {
-            Debug.Log("Attacking object/enemy");
             canAttack = false;
             WaitForTimeThenExecute.ExecuteAfterDelay(cooldown, ResetCooldown);
 

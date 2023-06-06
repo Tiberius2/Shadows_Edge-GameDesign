@@ -94,6 +94,19 @@ public class Inventory : MonoBehaviour
         return items.Count; 
     }
 
+    public bool HasItem(string name)
+    {
+        foreach (var item in items)
+        {
+            if (item.name == name)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private void InventoryItemsChanged()
     {
         OnItemChangedCallback?.Invoke();
