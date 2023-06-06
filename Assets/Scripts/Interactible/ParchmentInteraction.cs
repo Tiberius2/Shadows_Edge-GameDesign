@@ -58,6 +58,7 @@ public class ParchmentInteraction : MonoBehaviour
             if (!isOpen)
             {
                 OpenParchment();
+                fadeOut = false;
             }
             else
             {
