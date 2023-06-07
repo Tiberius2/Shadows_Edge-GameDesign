@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: RedArmor
   icon: {fileID: 21300000, guid: 3924ac3c5c6e4a741ba91774393e79e1, type: 3}
-  model: {fileID: 5868863258200751877, guid: acba5565b37977e408c284355c13e084, type: 3}
+  model: {fileID: 6131856805866793514, guid: 55b8a59b0e65e28469b24c6f7996e059, type: 3}
   defaultItem: 0
   canBeStacked: 0
-  pickupRadius: 0.8
+  pickupRadius: 0.6
   equipSlot: 1
   mesh: {fileID: 536091408129240722, guid: 4670731109170894c9e18e0aae0401ee, type: 3}
   armorModifier: 8

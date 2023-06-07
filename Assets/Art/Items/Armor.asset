@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Armor
   icon: {fileID: 21300000, guid: 3e0f936bd00cf9d478349742e5248dd6, type: 3}
-  model: {fileID: 5868863258200751877, guid: acba5565b37977e408c284355c13e084, type: 3}
+  model: {fileID: 6131856805866793514, guid: 55b8a59b0e65e28469b24c6f7996e059, type: 3}
   defaultItem: 0
   canBeStacked: 0
-  pickupRadius: 0.8
+  pickupRadius: 0.7
   equipSlot: 1
   mesh: {fileID: 536091408129240722, guid: ea294ad59b5ee7642a0710e3b6f0e6c1, type: 3}
   armorModifier: 3

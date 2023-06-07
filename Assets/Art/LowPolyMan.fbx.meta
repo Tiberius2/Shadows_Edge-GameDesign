@@ -6,7 +6,27 @@ ModelImporter:
   - first:
       74: -8808938681687948163
     second: QuickRigCharacter_Reference|QuickRigCharacter_Reference|Take 001|BaseLayer
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Helmet
+    second: {fileID: 2100000, guid: 795c0ac11db723f498c64a3c1a120811, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plate
+    second: {fileID: 2100000, guid: 3d56a0944c560404195323acafc0e63a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin
+    second: {fileID: 2100000, guid: fc0bd1f4fcfd737419b533dad2cd563f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UnderPants
+    second: {fileID: 2100000, guid: 15bbedd730c90de48999219c703a25e5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

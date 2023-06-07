@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: SimpleHelmet
   icon: {fileID: 21300000, guid: 3a7c75a315145e34a87d23fe526db4b9, type: 3}
+  model: {fileID: 679194587690337303, guid: fbef51622961f384f9b0f95feb6d08eb, type: 3}
   defaultItem: 0
-  model: {fileID: 5868863258200751877, guid: acba5565b37977e408c284355c13e084, type: 3}
+  canBeStacked: 0
+  pickupRadius: 0.8
   equipSlot: 0
   mesh: {fileID: 1238041039312787946, guid: e8b01ed737def234dbf7c3e7c7cce4cf, type: 3}
   armorModifier: 10

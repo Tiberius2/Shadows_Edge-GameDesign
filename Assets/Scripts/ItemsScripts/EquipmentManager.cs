@@ -38,7 +38,6 @@ public class EquipmentManager : MonoBehaviour
         if (newItem.name == "RustySword")
         {
             EquipSword();
-
             return;
         }
 

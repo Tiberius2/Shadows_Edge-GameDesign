@@ -17,7 +17,7 @@ MonoBehaviour:
   model: {fileID: 7672243264057420596, guid: a1c38bae61d5d8045877f7e1d7976fa7, type: 3}
   defaultItem: 0
   canBeStacked: 0
-  pickupRadius: 0.05
+  pickupRadius: 0.11
   equipSlot: 4
   mesh: {fileID: -4791325184169003014, guid: 3bbfb4941b990b840963e46319b28119, type: 3}
   armorModifier: 0

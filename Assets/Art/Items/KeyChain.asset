@@ -17,4 +17,4 @@ MonoBehaviour:
   model: {fileID: 5957572897252565146, guid: 4faf8380aa2955d42af6290f2e2476a5, type: 3}
   defaultItem: 0
   canBeStacked: 0
-  pickupRadius: 0.01
+  pickupRadius: 1.04

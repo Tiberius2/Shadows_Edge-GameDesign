@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Plate Legs
   icon: {fileID: 21300000, guid: 7515e3655a3045e468cb2c17d08a5725, type: 3}
+  model: {fileID: 4426182695420350298, guid: aff3e7d81bfce8148aebaef23ea0dbe3, type: 3}
   defaultItem: 0
-  model: {fileID: 5868863258200751877, guid: acba5565b37977e408c284355c13e084, type: 3}
+  canBeStacked: 0
+  pickupRadius: 0.58
   equipSlot: 5
   mesh: {fileID: 2434568398030024827, guid: 6192a5a76170ab64a84b057e9cc678a6, type: 3}
   armorModifier: 5
