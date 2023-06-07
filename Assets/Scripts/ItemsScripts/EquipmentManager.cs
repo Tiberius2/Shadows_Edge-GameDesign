@@ -1,14 +1,17 @@
-using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
-using static UnityEditor.Timeline.Actions.MenuPriority;
 
 public class EquipmentManager : MonoBehaviour
 {
     #region SingleTon
     public static EquipmentManager instance;
+
+    private GameObject sword;
+
     private void Awake()
     {
         instance = this;
+
+        sword = GameObject.FindWithTag("Weapon");
     }
     #endregion
 
@@ -32,6 +35,13 @@ public class EquipmentManager : MonoBehaviour
 
     public void Equip(Equipment newItem)
     {
+        if (newItem.name == "RustySword")
+        {
+            EquipSword();
+
+            return;
+        }
+
         int slotIndex = (int)newItem.equipSlot;
         Equipment oldItem = Unequip(slotIndex);
         if(currentEquipment[slotIndex] != null)
@@ -88,5 +98,12 @@ public class EquipmentManager : MonoBehaviour
         {
             UnequipAll();
         }
+    }
+
+    private void EquipSword()
+    {
+        sword.GetComponent<MeshRenderer>().enabled = true;
+        // set visibility
+        // set stats
     }
 }
