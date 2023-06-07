@@ -36,7 +36,7 @@ public class ChestDrop : Interactible
         // Create the object that can be picked after the current droppable object is destroyed
         GameObject pickableItem = Instantiate(item.model);
         pickableItem.name = item.name;
-        pickableItem.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+        pickableItem.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.7f, gameObject.transform.position.z);
 
         ItemPickup itemPickup = pickableItem.AddComponent<ItemPickup>();
         itemPickup.item = item;
