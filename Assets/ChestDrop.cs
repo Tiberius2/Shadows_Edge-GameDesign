@@ -6,6 +6,8 @@ public class ChestDrop : Interactible
     public Item item;
     public Animator chestAnimator;
 
+    private bool hasBeenOpened = false;
+
     private bool isOpen = false;
 
     private void Awake()
@@ -25,9 +27,10 @@ public class ChestDrop : Interactible
 
     private void HandleSpawn()
     {
-        if (item != null)
+        if (item != null && !hasBeenOpened)
         {
             CreateItem();
+            hasBeenOpened = true;
         }
     }
 
@@ -41,6 +44,7 @@ public class ChestDrop : Interactible
         ItemPickup itemPickup = pickableItem.AddComponent<ItemPickup>();
         itemPickup.item = item;
         itemPickup.radius = item.pickupRadius;
+
     }
 
 }
